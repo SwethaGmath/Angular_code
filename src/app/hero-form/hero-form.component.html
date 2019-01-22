@@ -1,0 +1,31 @@
+<p>
+  hero-form works!
+</p>
+
+<div class="container">
+  <h1>Hero Form</h1>
+  <form #heroForm="ngForm">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" [(ngModel)]="model.name" name="heroName" #name1="ngModel" class="form-control" id="name" required>
+    </div>
+    <div [hidden]= "name1.valid || name1.pristine" class="alret alert-danger">
+      Name is required!
+    </div>
+    {{model.name}}
+    <div class="form-group">
+      <label for="alterEgo">Alter Ego</label>
+      <input type="text" [(ngModel)]="model.alterEgo" name="heroAlterEgo" class="form-control" id="alterEgo">
+    </div>
+    {{model.alterEgo}}
+    <div class="form-group">
+      <label for="power"> Hero Power </label>
+      <select class="form-control" [(ngModel)]="model.power" name="heroPower" id="power" required >
+        <option *ngFor='let pow of model.powers' [value] = "pow"> {{pow}}</option>
+      </select> 
+    </div>
+    {{model.power}}
+    <button type="submit" [disabled]="!heroForm.form.valid" class="btn btn-success">Submit</button>
+   
+  </form>
+  </div>

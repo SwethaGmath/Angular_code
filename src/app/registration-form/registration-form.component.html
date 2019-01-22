@@ -1,0 +1,714 @@
+<p>
+  registration-form works!
+</p>
+ <div class="app">
+  <form name="form" (ngSubmit)="onSubmit()" #regForm = "ngForm">
+  <div class="app-body">
+      <div class="navbar">
+
+
+          <button type="button" class="btn btn-sidebar" data-toggle="sidebar"><i class="fa fa-bars"></i></button>
+
+
+          <div class="navbar-brand"><img src="../../assets/logo.jpg" alt="logo" />
+          </div>
+          <div class="logo-slogan"><span>D</span>igital <span>S</span>ales & <span>D</span>istribution</div>
+          <div class="right-section">
+              <div class="user-info">
+
+                  <div class="nav-item dropdown pull-right">
+                      <a class="nav-profile" id="profileDropdown" href="#">
+                          <i class="fa fa-question-circle" aria-hidden="true"></i>
+
+                      </a>
+                      <a class="nav-profile" id="profileDropdown" href="#">
+                          <i class="fa fa-bell" aria-hidden="true"></i>
+
+                      </a>
+                      <a class=" nav-profile" id="profileDropdown" href="#">
+                          <i class="fa fa-user-circle-o"></i>
+
+                      </a>
+
+                  </div>
+
+              </div>
+
+          </div>
+
+
+
+      </div>
+      <div class="navbar-two">
+
+      </div>
+      <div class="app-over">
+          <div class="app-sidebar hight-one sidebar-slide-left">
+              <div class="text-right">
+                  <button type="button" class="btn btn-sidebar" data-dismiss="sidebar">
+                      <span class="x"></span></button>
+              </div>
+
+              <div id="sidebar" class="sidebar-nav">
+
+              
+                  <div class="sidebar-nav-group">
+                      <a href="#content" class="nav-link"><span class="nav-link-text" >Dashboard</span></a>
+                  </div>
+                  <div class="sidebar-nav-group active">
+                      <a href="#content" class="nav-link"><span class="nav-link-text" >Manufacturers</span></a>
+                  </div>
+                  <div class="sidebar-nav-group ">
+                      <a href="#content" class="nav-link"><span class="nav-link-text" >Buyers</span></a>
+                  </div>
+                  <div class="sidebar-nav-group">
+                      <a href="#content" class="nav-link"><span class="nav-link-text" >Pricing Zone</span></a>
+                  </div>
+                  <div class="sidebar-nav-group">
+                      <a href="#device-controls" class="sidebar-nav-link" data-toggle="collapse" >
+                          <span class="nav-link-text">Pricing </span></a>
+                      <div id="device-controls" class="sidebar-nav-group  collapse " data-parent="#sidebar">
+                          <a href="" class="sidebar-nav-link"><span class="nav-link-text" >From Manufacturers</span></a>
+                          <a href="" class="sidebar-nav-link "><span class="nav-link-text" >To Buyers</span></a>
+                      </div>
+                  </div>
+                  <div class="sidebar-nav-group">
+                      <a href="#content" class="nav-link"><span class="nav-link-text" >Buyer's PO</span></a>
+                  </div>
+                  <div class="sidebar-nav-group">
+                      <a href="#content" class="nav-link"><span class="nav-link-text" >Reports</span></a>
+                  </div>
+                  <div class="sidebar-nav-group">
+                      <a href="#content" class="nav-link"><span class="nav-link-text" >Settings</span></a>
+                  </div>
+
+
+
+
+
+              </div>
+
+          </div>
+
+          <div class="app-content pb-3 hight-one">
+              
+             
+              <div class="container-fulid container-body">
+<h2>Manufacturer’s Registration
+  
+  </h2>
+  <div class=" bs-wizard row mx-5 justify-content-md-center">
+          
+                                          <div class="col-4 bs-wizard-step active">
+                                              <a href="Parent_AddSellerVideo.html"></a>
+                                              <div class="progress"><div class="progress-bar"></div></div>
+                                              <a href="#" class="bs-wizard-dot"></a>
+                                             <div class="bs-wizard-info text-center">BASIC DETAILS</div>
+                                          </div>
+          
+                                          <div class="col-4 bs-wizard-step "><!-- complete -->
+                                              <div class="progress"><div class="progress-bar"></div></div>
+                                              <a href="#" class="bs-wizard-dot"></a>
+                                               <div class="bs-wizard-info text-center">PRODUCT DETAILS</div>
+                                          </div>
+          
+                                      </div>
+                      <div class="card-body content-card-body ">
+                              <div class="form-one">
+                        
+
+<div class="row ">
+  <div class="col-7">
+     <div class="row">
+        <div class="col-4">
+           <div class="form-group">
+              <label for="exampleFormControlInput1">Company Name*</label>
+              <input type="email" class="form-control" [(ngModel)]="model.companyName" name="companyName" maxlength="500" #companyName="ngModel"  id="exampleFormControlInput1" required>
+           </div>
+           <!-- <div *ngIf="companyName.invalid" class="invalid-feedback">
+             <div *ngIf="companyName.errors.required"> Company name is required</div>
+           </div> -->
+           <div [hidden]= "companyName.valid || companyName.pristine" class="alret alert-danger">
+                Company Name is required!
+              </div>
+              {{model.companyName}}
+        </div>
+        <div class="col-4">
+           <div class="form-group">
+              <label for="exampleFormControlInput1">Business Type*</label>
+              <div class="select-box">
+                 <label>
+                    <select class="form-control form-control-sm" [(ngModel)]="model.businessType" name="businessType" #businessType="ngModel" >
+                      <!-- <option *ngFor='let busi of busiTypes' [value] = "busi"> {{busi}}</option>  -->
+                      <option value="aa" selected="selected">Select Business Type</option>
+                       <option value="aaa">Manufacture 1 </option>
+                    </select>
+                 </label>
+              </div>
+              </div>
+              {{model.businessType}}
+        </div>
+     </div>
+     <div class="row">
+        <div class="col-4">
+           <div class="form-group">
+              <label for="exampleFormControlInput1">Established*</label>
+              <div class="select-box">
+                 <label>
+                    <select class="form-control form-control-sm">
+                       <option value="aa" selected="selected">Select Year</option>
+                       <option value="aaa">Manufacture 1 </option>
+                    </select>
+                 </label>
+              </div>
+           </div>
+           {{model.establishedYr}}
+        </div>
+        <div class="col-4">
+           <div class="form-group">
+              <label for="exampleFormControlInput1">Legal Status*</label>
+              <div class="select-box">
+                 <label>
+                    <select [(ngModel)]="model.legalStatus" name="legalStatus" #legalStatus="ngModel" class="form-control form-control-sm" required>
+                       <option value="aa" selected="selected">Proprietorship</option>
+                       <option value="aaa">Manufacture 1 </option>
+                    </select>
+                 </label>
+              </div>
+              <div [hidden]= "legalStatus.valid || legalStatus.pristine" class="alret alert-danger">
+                    Legal Status is required!
+              </div>
+                 {{model.legalStatus}}
+           </div>
+           </div>
+        <div class="col-4">
+           <div class="form-group">
+              <label for="exampleFormControlInput1">Website URL</label>
+              <input type="text" [(ngModel)]="model.websiteUrl" name="websiteUrl" #websiteUrl="ngModel" class="form-control" id="exampleFormControlInput1" maxlength="500">
+           </div>
+           {{model.websiteUrl}}
+        </div>
+        
+     </div>
+     <div class="row">
+        <div class="col-4">
+           <div class="form-group">
+              <label for="exampleFormControlInput1">Mobile Number*</label>
+              <input type="number"  [(ngModel)]="model.mobileNumber" name="mobileNumber" #mobileNumber="ngModel" class="form-control" id="exampleFormControlInput1" maxlength="10" required>
+           </div>
+           <div [hidden]= " mobileNumber.valid || mobileNumber.pristine" class="alret alert-danger">
+                mobileNumber is required!
+          </div>
+           {{model.mobileNumber}}
+        </div>
+        <div class="col-4">
+           <div class="form-group">
+              <label for="exampleFormControlInput1">Landline Number</label>
+              <input type="number" [(ngModel)]="model.landlineNumber" name="landlineNumber" #landlineNumber="ngModel" class="form-control" id="exampleFormControlInput1" maxlength="15" required>
+           </div>
+           <div [hidden]= "landlineNumber.valid || landlineNumber.pristine" class="alret alert-danger">
+               Land Line number is required.
+           </div>
+        </div>
+        <div class="col-4">
+           <div class="form-group">
+              <label for="exampleFormControlInput1">Email ID</label>
+              <input type="email" class="form-control" id="exampleFormControlInput1">
+           </div>
+        </div>
+     </div>
+     <div class="row">
+        <div class="col-12">
+           <div class="form-group">
+              <label class="checkbox checkbox-primary">
+              <input type="checkbox">
+              <span class="check-mark"></span>  Allow mSupply to make calls or send SMS on my registered mobile number
+              </label>
+           </div>
+        </div>
+     </div>
+  </div>
+  <div class="col-5">
+     <div class="row">
+        <div class="col">
+           <div class="upload-image">
+              <div class="upload-image-content">
+                 <i class="fa fa-cloud-upload" aria-hidden="true"></i>
+                 <br>
+                 Upload Image
+              </div>
+           </div>
+           <div class="mt-2 color-grey-off-light">
+              <a href="#">Upload Company Logo</a>
+              <br>
+              Max file size 2 mb
+           </div>
+        </div>
+        <div class="col">
+           <div class="upload-image">
+              <div class="upload-image-content">
+                 <i class="fa fa-cloud-upload" aria-hidden="true"></i>
+                 <br>
+                 Upload Image
+              </div>
+           </div>
+           <div class="mt-2 color-grey-off-light">
+              <a href="#">Upload Company Logo</a>
+              <br>
+              Max file size 2 mb
+           </div>
+        </div>
+        <div class="col">
+           <div class="upload-image">
+              <div class="upload-image-content">
+                 <i class="fa fa-cloud-upload" aria-hidden="true"></i>
+                 <br>
+                 Upload Image
+              </div>
+           </div>
+           <div class="mt-2 color-grey-off-light">
+              <a href="#">Upload Company Logo</a>
+              <br>
+              Max file size 2 mb
+           </div>
+        </div>
+     </div>
+  </div>
+  <div class=“clearfix”></div>
+</div>
+<hr/>
+<h3 class="header mt-5">Proprietor / Partner Details</h3>
+<div class="row ">
+<div class="col-6">
+      <h3 class="sub">Proprietor / Partner 1</h3>
+</div>
+<div class="col-6 text-right">
+      <button type="button" class="btn btn-outline-dark text-left "><i class="fa fa-trash" aria-hidden="true"></i> Remove</button>
+      <button type="button" class="btn btn-outline-primary"> Add Proprietor/Partner</button>
+</div>
+</div>
+
+<div class="row ">
+  <div class="col-7">
+     <div class="row">
+        <div class="col-4">
+           <div class="form-group">
+              <label for="exampleFormControlInput1">Proprietor Name
+                      
+                      </label>
+              <input type="text" maxlength="250" class="form-control" id="exampleFormControlInput1">
+           </div>
+        </div>
+
+     </div>
+     <div class="row">
+          <div class="col-8">
+             <div class="form-group">
+                <label for="exampleFormControlInput1">Address Line 1*
+                      
+                      
+                        
+                        </label>
+                <input type="text" maxlength="250" class="form-control" id="exampleFormControlInput1">
+             </div>
+          </div>
+
+       </div>
+       <div class="row">
+              <div class="col-8">
+                 <div class="form-group">
+                    <label for="exampleFormControlInput1">Address Line 2*
+                          
+                          
+                            
+                            </label>
+                    <input type="text" maxlength="250" class="form-control" id="exampleFormControlInput1">
+                 </div>
+              </div>
+   
+           </div>
+     <div class="row">
+          <div class="col-4">
+                  <div class="form-group">
+                     <label for="exampleFormControlInput1">State*</label>
+                     <div class="select-box">
+                        <label>
+                           <select class="form-control form-control-sm" [(ngModel)]="model.states" name="states" #states="ngModel">
+                              <option value="aa" selected="selected">Select State</option>
+                              <option *ngFor='let stat of model.states' [value]="stat">{{stat}}</option>
+                            </select>
+                        </label>
+                     </div>
+                  </div>
+                  </div>
+                  <div class="col-4">
+                          <div class="form-group">
+                             <label for="exampleFormControlInput1">City*</label>
+                             <div class="select-box">
+                                <label>
+                                   <select class="form-control form-control-sm">
+                                      <option value="aa" selected="selected">Select City</option>
+                                      <option value="aaa">City 1 </option>
+                                   </select>
+                                </label>
+                             </div>
+                          </div>
+                          </div>
+        <div class="col-4">
+           <div class="form-group">
+              <label for="exampleFormControlInput1">PIN Code</label>
+              <input type="number" required  [(ngModel)]="model.PINcode" name="PINcode" #PINcode="ngModel" maxlength="10"  class="form-control" id="exampleFormControlInput1">
+           </div>
+           <div [hidden]="PINcode.valid || PINcode.pristine"  class="alret alert-danger">
+                Pin code is required.
+            </div>
+        </div>
+        <div class="col-4">
+           <div class="form-group">
+              <label for="exampleFormControlInput1">Proprietor Date of Birth
+                      
+                      </label>
+              <input class="form-control form-control-sm" type="date" placeholder="">
+           </div>
+        </div>
+        <div class="col-4">
+              <div class="form-group">
+                 <label for="exampleFormControlInput1">Proprietor Mobile Number
+                      
+                      </label>
+                 <input type="email" class="form-control" id="exampleFormControlInput1">
+              </div>
+           </div>
+           <div class="col-4">
+                  <div class="form-group">
+                     <label for="exampleFormControlInput1">Proprietor Email ID
+                          
+                          </label>
+                     <input type="email" class="form-control" id="exampleFormControlInput1">
+                  </div>
+               </div>
+     </div>
+    </div>
+  
+
+
+       <div class=“clearfix”></div>
+    </div>
+<hr/>
+<h3 class="header mt-5">Invoice Address</h3>
+
+
+<div class="row ">
+      <div class="col-7">
+<div class="row">
+      <div class="col-8">
+         <div class="form-group">
+            <label for="exampleFormControlInput1">Address Line 1*
+                  
+                  
+                    
+                    </label>
+            <input type="email" class="form-control" id="exampleFormControlInput1">
+         </div>
+      </div>
+
+   </div>
+   <div class="row">
+          <div class="col-8">
+             <div class="form-group">
+                <label for="exampleFormControlInput1">Address Line 2*
+                      
+                      
+                        
+                        </label>
+                <input type="email" class="form-control" id="exampleFormControlInput1">
+             </div>
+          </div>
+
+       </div>
+
+       <div class="row">
+              <div class="col-4">
+                      <div class="form-group">
+                         <label for="exampleFormControlInput1">State*</label>
+                         <div class="select-box">
+                            <label>
+                               <select class="form-control form-control-sm" [(ngModel)]="model.invoiceState" name="invoiceState" #invoiceState="ngModel">
+                                  <option value="aa" selected="selected">Select State</option>
+                                  <option *ngFor='let st of model.invoiceState' [value]="st">{{st}}</option>
+                               </select>
+                            </label>
+                         </div>
+                      </div>
+                      </div>
+                      <div class="col-4">
+                              <div class="form-group">
+                                 <label for="exampleFormControlInput1">City*</label>
+                                 <div class="select-box">
+                                    <label>
+                                       <select class="form-control form-control-sm">
+                                          <option value="aa" selected="selected">Select City</option>
+                                          <option value="aaa">City 1 </option>
+                                       </select>
+                                    </label>
+                                 </div>
+                              </div>
+                              </div>
+            <div class="col-4">
+               <div class="form-group">
+                  <label for="exampleFormControlInput1">PIN Code</label>
+                  <input type="number" required  [(ngModel)]="model.invoicePINCode" name="invoicePINCode" #invoicePINCode="ngModel" maxlength="10" class="form-control" id="exampleFormControlInput1">
+               </div>
+               <div [hidden]= "invoicePINCode.valid || invoicePINCode.pristine" class="alret alert-danger">
+                    Pin code is required.
+                </div>
+            </div>
+          </div>
+      </div>
+    
+ 
+
+         <div class=“clearfix”></div>
+      </div>
+<hr/>
+<h3 class="header mt-5">Bank Account Information
+
+</h3>
+
+<div class="row ">
+<div class="col-7">
+<div class="row">
+<div class="col-4">
+<div class="form-group">
+<label for="exampleFormControlInput1">Account Holder Name*
+      
+      
+     
+     
+       
+       </label>
+<input type="text" maxlength="250" required [(ngModel)]="model.accountHolder" name="accountHolder" #accountHolder="ngModel" class="form-control" id="exampleFormControlInput1">
+</div>
+<div [hidden]="accountHolder.valid || accountHolder.pristine" >
+    Account holder name is required.
+</div>
+</div>
+<div class="col-4">
+<div class="form-group">
+ <label for="exampleFormControlInput1">Account Number*
+      
+      
+       
+       
+         
+         </label>
+ <input type="text" maxlength="15" required [(ngModel)]="model.accountNumber" name="accountNumber" #accountNumber="ngModel" class="form-control" id="exampleFormControlInput1">
+</div>
+<div [hidden]="accountNumber.valid || accountNumber.pristine" >
+        Account Number name is required.
+    </div>
+</div>
+<div class="col-4">
+  <div class="form-group">
+     <label for="exampleFormControlInput1">Re-enter Account Number*
+          
+          
+           
+           
+             
+             </label>
+     <input type="email" class="form-control" id="exampleFormControlInput1">
+  </div>
+</div>
+</div>
+<div class="row">
+<div class="col-4">
+<div class="form-group">
+   <label for="exampleFormControlInput1">IFSC Code*
+              </label>
+   <input type="text" maxlength="15" required [(ngModel)]="model.IFSC" name="IFSC" #IFSC="ngModel" class="form-control" id="exampleFormControlInput1">
+</div>
+</div>
+<div class="col-4">
+  <div class="form-group">
+     <label for="exampleFormControlInput1">Account Type*
+          
+          </label>
+     <div class="select-box">
+        <label>
+           <select class="form-control form-control-sm" [(ngModel)]="model.accType" name="accType" #accType="ngModel" id="exampleFormControlInput1">
+              <option *ngFor= 'let acctype of model.accType' [value]="acctype" > {{acctype}}
+                      
+                      </option>
+              <!-- <option value="aaa">Account Type 1 </option> -->
+           </select>
+        </label>
+     </div>
+  </div>
+  </div>
+</div>
+
+
+      <div class="row">
+              <div class="col-8">
+                      <div class="form-group">
+                         <label for="exampleFormControlInput1">Upload Cancelled Cheque*</label>
+                         <label class="custom-file">
+                              <input type="file" id="file" class="custom-file-input">
+                              <span class="custom-file-control"></span>
+                          </label>
+                      </div>
+                   </div>
+      </div>
+      
+
+      <div class=“clearfix”></div></div></div>
+<hr/>
+<h3 class="header">Terms of Trade</h3>
+<div class="row ">
+  <div class="col-7">
+  <div class="row">
+  <div class="col-4">
+    <div class="form-group">
+       <label for="exampleFormControlInput1">No. of Blank Cheques Received
+              </label>
+       <input type="email" class="form-control" id="exampleFormControlInput1">
+    </div>
+  </div>
+  <div class="col-4">
+      <div class="form-group">
+         <label for="exampleFormControlInput1">No. of Blank Cheques Received
+               
+                 </label>
+         <input type="email" class="form-control" id="exampleFormControlInput1">
+      </div>
+   </div>
+   <div class="col-4">
+          <div class="form-group">
+             <label for="exampleFormControlInput1">EMD Cheque Date
+                  
+                     </label>
+             <input type="email" class="form-control" id="exampleFormControlInput1">
+          </div>
+       </div>
+  </div>
+  <div class="row">
+     <div class="col-4">
+        <div class="form-group">
+           <label for="exampleFormControlInput1">Mode of Payment Details
+                 </label>
+           <input type="email" class="form-control" id="exampleFormControlInput1">
+        </div>
+     </div>
+     <div class="col-8">
+          <div class="form-group">
+             <label for="exampleFormControlInput1">Name of Common Partner/Associate
+                   </label>
+             <input type="email" class="form-control" id="exampleFormControlInput1">
+          </div>
+       </div>
+
+  </div>
+  
+  
+              <div class="row">
+                      <div class="col-12">
+                              <div class="form-group">
+                                      <label class="checkbox checkbox-primary">
+                                      <input type="checkbox">
+                                      <span class="check-mark"></span>  Authorize mSupply to access CIBIL records
+                                      
+                                      
+                                      </label>
+                                   </div>
+                           </div>
+              </div>
+  
+              <div class=“clearfix”></div></div></div>
+              <hr/>
+              <h3 class="header">Other Information </h3>
+              <div class="row">
+                  <div class="col-7">
+
+                
+              <div class="row">
+                      <div class="col-4">
+                         <div class="form-group">
+                            <label for="exampleFormControlInput1">Billing Software
+                                  
+                                  
+                                  </label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1">
+                         </div>
+                      </div>
+                      <div class="col-4">
+                           <div class="form-group">
+                              <label for="exampleFormControlInput1">Annual Turnover
+                                    </label>
+                              <input type="email" class="form-control" id="exampleFormControlInput1">
+                           </div>
+                        </div>
+               
+                   </div>
+                  </div>
+              </div>
+              <hr/>
+              <h3 class="header">Documents & Attachments</h3>
+              <div class="row">
+                  <div class="col-7">
+
+                
+              <div class="row">
+                  <div class="col-1 align-self-center">1.</div>
+                      <div class="col-4">
+                         <div class="form-group">
+                            <label for="exampleFormControlInput1">Document Name
+                                 
+                                  </label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1">
+                         </div>
+                      </div>
+                      <div class="col-4">
+                              <div class="form-group">
+                                 <label for="exampleFormControlInput1">Upload Document</label>
+                                 <label class="custom-file">
+                                      <input type="file" id="file" class="custom-file-input">
+                                      <span class="custom-file-control"></span>
+                                  </label>
+                              </div>
+                           </div>
+                      <div class="col-3  align-self-center">
+                              <div class="form-group mb-0">
+                                      <a href="#" class=" btn-minus" role="button" aria-pressed="true"><i class="fa fa-minus-circle" aria-hidden="true"></i></a>
+                                      <a href="#" class=" btn-plus ml-3" role="button" aria-pressed="true"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+                                  </div>
+                        </div>
+               
+                   </div>
+                  </div>
+              </div>
+  
+  
+ <div class="mt-5 text-center" >
+    <button type="submit" class="btn btn-success">Submit</button>
+    <!-- <button type="button" class="btn btn-primary">NEXT </button> -->
+     </div>
+                                 
+  
+                                
+                          </div>
+                      </div>
+
+                  </div>
+              </div>
+          </div>
+      
+  </div>
+</form>
+</div>
+
+
+
+
+
+
